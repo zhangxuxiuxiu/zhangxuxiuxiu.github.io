@@ -1,19 +1,19 @@
 ---
 layout:     post
-title:      "private field or function access"
+title:      "Private Member Access"
 subtitle:   "私有成员访问"
 date:       2025-09-09 18:48:00
 author:     "Nuoyumi"
 header-img: "img/post-bg-2015.jpg"
 catalog: true
 tags:
-	- cpp 
-	- private member access	
-	- private field access	
-	- private function access	
-	- template programming
-	- meta programming
-	- explicit template instantiation 
+    - cpp 
+    - private member access	
+    - private field access	
+    - private function access	
+    - template programming
+    - meta programming
+    - explicit template instantiation 
 ---
 
 
@@ -52,7 +52,11 @@ assert( 5 == TagFunctor<TagFn>(obj, 3) );
 在正常情况下，私有成员是无法被访问的。那***不正常***情况下呢？
 ```
 17.7.2 (item 12)
-The usual access checking rules do not apply to names used to specify explicit instantiations. [Note: In particular, the template arguments and names used in the function declarator (including parameter types, return types and exception specifications) may be private types or objects which would normally not be accessible and the template may be a member template or member function which would not normally be accessible.]
+The usual access checking rules do not apply to names used to specify explicit instantiations. 
+[Note: In particular, the template arguments and names used in the function declarator 
+(including parameter types, return types and exception specifications) may be private types 
+or objects which would normally not be accessible and the template may be a member template 
+or member function which would not normally be accessible.]
 ```
 简而言之，就是模板实例化的时候，模板参数，返回值等可以使用平时不被允许的私有成员。
 
